@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .payment-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            color: #333; /* Adjusted text color for better visibility */
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .qr-code {
+            margin-top: 20px;
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+        }
+
+        .homepage-button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .homepage-button:hover {
+            background-color: #45a049;
+        }
+
+        .date-time {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="payment-container">
+    <div class="date-time">
+        <p id="datetime"></p>
+    </div>
+
+    <h1>Your Payment Details</h1>
+    <p>COPY THE ADDRESS OR SCAN THE QR CODE TO INVEST WITH US.Please send the investment amount to the following addresses:</p>
+    <div>
+        <h2>Bitcoin (BTC) Address:</h2>
+        <p id="bitcoin-address">17KTTWk1MPBefxbmkP43cpmjWzX7aLLceM</p>
+        <img class="qr-code" src="BTCUSD.jpg" alt="Bitcoin QR Code">
+    </div>
+    <div>
+        <h2>USD Coin (USDC) Address:</h2>
+        <p id="usdc-address">TZ3fm33S9Jsoh7RCfesiaf3jaJeigS88nk</p>
+        <img class="qr-code" src="USDT.jpg" alt="USD Coin QR Code">
+    </div>
+    <button class="homepage-button" onclick="window.location.href='https://asarph16.github.io/Cash-pay-Cryptex.com/'">View Homepage</button>
+</div>
+
+<script>
+    function updateDateTime() {
+        var now = new Date();
+        var datetimeElement = document.getElementById('datetime');
+        datetimeElement.innerHTML = now.toDateString() + ' ' + now.toLocaleTimeString();
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+</script>
+
+</body>
+</html>
